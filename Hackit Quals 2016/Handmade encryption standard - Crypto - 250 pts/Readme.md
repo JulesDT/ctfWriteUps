@@ -24,7 +24,7 @@ Once we've got a group like this one : `(a,b,c)` we got only 2 permutations whic
 - `(b,c,a)`
 - `(c,a,b)`
 
-Once we've listed this, the total of permutations equals 2 times the number of combinations of 3 among 256. Which mathematically is : `![2*((256)!/((256-3)!*3!))](equation.gif) = 5 527 040` possibilities.
+Once we've listed this, the total of permutations equals 2 times the number of combinations of 3 among 256. Which mathematically is : ![2*((256)!/((256-3)!*3!))](equation.gif)` = 5 527 040` possibilities.
 
 So in our code, we first need to generate all this permutations with this :
 
