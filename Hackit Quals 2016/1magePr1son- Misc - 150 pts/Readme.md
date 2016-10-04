@@ -17,6 +17,9 @@ Theses pixels are placed every 25 pixels (24 "normal" pixels between each "abnor
 So we try to create an image with only theses pixels. We got this tiny python code :
 
 ```python
+'''
+Pod for Team Fourchette Bombe
+'''
 from PIL import Image
 
 im = Image.open( 'planet.png' )
