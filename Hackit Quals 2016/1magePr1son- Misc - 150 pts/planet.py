@@ -1,3 +1,6 @@
+'''
+Pod for Team Fourchette Bombe
+'''
 from PIL import Image
 
 im = Image.open( 'planet.png' )
