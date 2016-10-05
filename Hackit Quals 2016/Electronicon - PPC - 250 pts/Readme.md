@@ -8,9 +8,9 @@
 
 ![File](firstSight.png)
 
-At this state, we already know what we need to do : Read this text file and write it's hexadecimal content to a new file. Then we'll se what we can do with this builded file.
+At this state, we already know what we need to do : Read this text file and write the hexadecimal content to a new file. Then we'll see what we can do with this builded file.
 
-So to make te recognition, we first need patterns of different hexadecimal characters. So for this I created a little python code which takes an multiplier as input that we can change by hand to design which letter we are cutting out.
+So to make the recognition, we first need patterns of different hexadecimal characters. To do this, I created a little python code which takes an multiplier as input that we can change by hand to describe which letter we are cutting out.
 
 We must here pay attention to use codecs and utf-8 encoding to avoid problems or unwanted errors.
 
@@ -35,7 +35,7 @@ out = codecs.open('painPatterns/out','w', encoding='utf-8')
 out.write(line)
 ```
 
-This code will create a file in the folder painPatters with the letter designed by the multiplier. For example here, with `multiplier = 1`, we extract letter `F` and with `multiplier = 2` we extract `D`.
+This code will create a file in the folder painPatterns with the letter designed by the multiplier. For example here, with `multiplier = 1`, we extract letter `F` and with `multiplier = 2` we extract `D`.
 
 To find which multiplier we need, a good and easy way is to place our cursor in one letter, check the Column number in the bottom left of Sublime Text and divide this number by the length (here 13). The integer value will be the multiplier.
 
@@ -58,9 +58,8 @@ for i in range(0,len(flines[0]),13):
 		lines = fp.readlines() 
 		Found = True
 		for l in range(0,11):
-			newI = i
 			for c in range(0,13):
-				if ((flines[l][i+c] == ' ' and lines[l][c] != ' ') or (flines[l][i+c] != ' ' and lines[l][c] == ' ')):
+				if (flines[l][i+c] != lines[l][c]):
 					Found = False;
 					break;
 

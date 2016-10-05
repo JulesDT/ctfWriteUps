@@ -15,9 +15,8 @@ for i in range(0,len(flines[0]),13):
 		lines = fp.readlines() 
 		Found = True
 		for l in range(0,11):
-			newI = i
 			for c in range(0,13):
-				if ((flines[l][i+c] == ' ' and lines[l][c] != ' ') or (flines[l][i+c] != ' ' and lines[l][c] == ' ')):
+				if (flines[l][i+c] != lines[l][c]):
 					Found = False;
 					break;
 
