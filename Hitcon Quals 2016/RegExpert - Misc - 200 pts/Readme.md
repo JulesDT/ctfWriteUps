@@ -77,4 +77,4 @@ This regex works but the length limit is 29. After testings, we didn't find a wa
 5th Solution : `^(?=(a\g<1>?b)c)a+(b\g<2>?c)$`
 
 **Here we are !**
-With all this, we get the well diserved flag : `hitcon{The pumping lemma is a lie, just like the cake}`
+With all this, we get the well deserved flag : `hitcon{The pumping lemma is a lie, just like the cake}`
