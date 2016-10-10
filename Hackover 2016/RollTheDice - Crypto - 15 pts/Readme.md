@@ -67,3 +67,5 @@ def main():
 
 main()
 ```
+
+Running this, we quickly get the flag `hackover16{HowAboutAuthenticatedEncrYption?}`
