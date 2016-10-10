@@ -42,7 +42,7 @@ So we try the regex `^(a\g<1>?b)$` and it works !
 A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself.
 ```
 Here I don't have much to say.
-To force all elements to be x and avoir empty regex we put `^xx+$` at the end.
+To force all elements to be `x` and avoid empty regex we put `^xx+$` at the end.
 `(xx+)\1+` matches non-prime length strings. So we invert it and get the 3rd solution
 
 3rd Solution : `(?!(xx+)\1+$)^xx+$`
