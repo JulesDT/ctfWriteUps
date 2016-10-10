@@ -26,7 +26,7 @@ Here we are gonna make the split on modified sets, we elevate every element of t
 Then, to avoid the problem of non positive elements in this algorithm we add ![2^n](2n.gif) to every element in the `int_list`
 Due to the shape of the input set (being a range of integers without missing numbers in between), making equal size sets is pretty straightforward. We just need to put the last element (which will add 0 to the sum and therefore change nothing in our partition) to the partition having the less elements to make equal size partitions.
 
-This problem takes a certain amount of time when `(n,k)` equals `(16,16)` but nothing impossible. My algorithm gets the flag in about 9 minutes. This is a lot, and yes a C++ implementation could be faster, but that's not too much here.
+This problem takes a certain amount of time when `(n,k)` equals `(16,16)` but nothing impossible. My algorithm gets the flag in about 9 minutes. This is a lot, and yes a C++ implementation could be faster, but that's not too much here. *(Edit : process is a lot faster now thanks to elbae. It takes about 10 seconds)*
 
 Here is the final code giving us the flag we want :
 ```python
@@ -39,29 +39,30 @@ import operator
 import time
 
 def find_partition(int_list,n,k):
-	A = []
-	B = []
-	Aret = []
-	Bret = []
+	len_A=0; len_B=0; sum_A=0; sum_B=0
+	Aret = ""; Bret = ""
+
 	for i in range(0,len(int_list)):
-		int_list[i] += 2**n
-	
-	for nb in sorted(int_list, reverse=True):
-		if nb == 0:
-			if len(A) < len(B):
-				A.append(0)
-				Aret.append(-2**n)
-			else:
-				B.append(0)
-				Bret.append(-2**n)
-		else:
-			if sum(A) < sum(B):
-			   A.append(nb**k)
-			   Aret.append(nb-2**n)
-			else:
-			   B.append(nb**k)
-			   Bret.append(nb-2**n)
-	return (Aret, Bret)
+	    int_list[i] += 2**n
+	int_list=int_list[::-1]
+	for nb in int_list:
+	    if nb == 0:
+	        if len_A < len_B:
+	            len_A+=1
+	            Aret+= str(-2**n)+ " "
+	        else:
+	            len_B+=1
+	            Bret+= str(-2**n)+ " "
+	    else:
+	        if sum_A < sum_B:
+	           sum_A+=(nb**k)
+	           len_A+=1
+	           Aret+=str(nb-(2**n))+ " "
+	        else:
+	           sum_B+=(nb**k)
+	           len_B+=1
+	           Bret+=str(nb-(2**n))+ " "
+	return (Aret)
 
 def main():
 	begin = time.time()
@@ -78,10 +79,7 @@ def main():
 			k = long(mgex.group(2));
 			mySet = range(-2**n,2**n);
 			partition = find_partition(mySet,n,k)
-			final = ''
-			for p in partition[1]:
-				final += ' '+str(p)
-			s.send(final[1:]+'\n');
+			s.send(partition+'\n');
 		
 	print "Connection closed."
 	s.close()
@@ -92,3 +90,4 @@ main()
 
 And this process gives us the flag : `hitcon{8Ee121m0n kNow3 ev1l Num8e2}`
 
+*EDIT : Thanks to elbae for his remark concerning time improvement. As I said, I did not search much for improvement as far as it was still reasonable. But with more cases to perform, this improvement could have been a must have to flag this challenge !*
