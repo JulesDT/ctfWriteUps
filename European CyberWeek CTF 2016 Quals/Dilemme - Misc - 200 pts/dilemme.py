@@ -1,13 +1,3 @@
-# European CyberWeek 2016 Quals - Dilemme
-### Misc - 200 pts
-
-The challenge gives us a captcha and a QRCode to read in a limited time. Reading the QRCode is pretty straightforward with `qrtools`
-For the captcha, there's custom lines printed on the image. But the message is in red and the lines in a kind of blue (Colorblind here ! \o/)
-We just need to check the RGB code of each pixel and transform it to white if it's the color of the lines. Then tesseract will work perfectly without the lines !
-
-The code is pretty straightforward and allows us to get a new QrCode and a new captcha giving the wanted flag
-
-```python
 '''
 Author : Pod
 '''
@@ -70,4 +60,3 @@ data = dom.findAll("img", {"alt" : "QRCode Win"})[0]['src']
 im = Image.open(BytesIO(base64.b64decode(data[21:])))
 im = im.convert('RGB');
 im.save('qrcodeWin.png')
-```
