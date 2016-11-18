@@ -68,7 +68,7 @@ print string
 ```
 
 This code will print the resulting string and show a nice image of the solution
-![Solution visual](solution.png)
+![Solution visual](solution.bmp)
 
 The resulting string :
 ```
