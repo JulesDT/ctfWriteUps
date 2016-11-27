@@ -8,7 +8,7 @@
 This challenge is about the "Southern Cross Cipher". A quick look to the Southern Cross makes us think of the Vigenere Cipher.
 
 The Vigenere cipher is based on the Ceasar Cipher. We choose a code, and then have a different ceasar cipher for each letter depending on the key. More information can be found [on the wikipedia page](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher). Here is the Vigenere Cipher shift table :
-![Vigenere Cipher](vigenere.png)
+![Vigenere Cipher](vigenere.jpg)
 
 Many different algorithms exist on Internet to solve this cipher.
 
