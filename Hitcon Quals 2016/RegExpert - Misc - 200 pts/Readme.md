@@ -4,9 +4,9 @@
     Do you remember "hard to say" last year?
     I think this one is harder to say...
     
-"Simple" channel in appearance, we need to give a regex to match a fixed pattern. We have 5 regex to find.
+"Simple" challenge in appearance, we need to give a regex to match a fixed pattern. We have 5 regex to find.
 The three main things to take care of are :
-- Ruby language is used. Therefore Regex are sometimes different in their syntax
+- Ruby language is used. Therefore Regex are sometimes different in their syntax compared to what I was used to
 - We don't have access to options, so no "insensitive" option possible
 - Asked Regex are not usual
 
