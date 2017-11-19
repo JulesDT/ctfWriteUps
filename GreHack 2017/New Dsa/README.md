@@ -14,7 +14,7 @@ This challenge is about signatures with DSA. The text is pretty straightforward,
 Indeed, looking at [DSA Algorithm](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#Signing), we get the signing step formula: 
 ![s = k^-1(H(m) + xr) [q]](https://wikimedia.org/api/rest_v1/media/math/render/svg/c44c50d272b314bf958cc2757987d7ca93e3d789).
 
-If we know `k`, we can then retrieve `x` (the private key) with the formula: ![x = ((k * s) - H(m))/r mod q](formula.gif) which translates to: ![x = ((k * s) - H(m)) * mod_inv(r, q) % q](inline.formula.gif)
+If we know `k`, we can then retrieve `x` (the private key) with the formula: ![x = ((k * s) - H(m))/r mod q](formula.gif) which translates to: ![x = ((k * s) - H(m)) * mod_inv(r, q) % q](inline_formula.gif)
 
 Here, with a quick look at the `my_DSA.py` file, we can see that `k` is not random.`k` is only dependant on the message signed and the public key. So we can easily reconstruct the `k` value used for the signature given, recover the private key and use it to sign our own message.
 
