@@ -18,6 +18,8 @@ If we know `k`, we can then retrieve `x` (the private key) with the formula: ![x
 
 Here, with a quick look at the `my_DSA.py` file, we can see that `k` is not random.`k` is only dependant on the message signed and the public key. So we can easily reconstruct the `k` value used for the signature given, recover the private key and use it to sign our own message.
 
+For the solution, I had few problems during the challenge, the biggest one was that pip was apparently giving me the right version of pycrypto but when running it, the `importKey` method of DSA wasn't available. So I had to download the repository and build and install the package manually to make it work.
+
 Solution:
 ```python
 from Crypto.PublicKey import DSA
