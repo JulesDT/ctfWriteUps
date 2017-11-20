@@ -64,7 +64,7 @@ possible_decode("...--.--.-----..-..-...---.")
 Sadly, the output is huge (25 073 081 entries for `output`, 427 743 for `output_11`) and thus the flag is very hard to catch. I searched for `FLAG` and found a bunch of words finishing with `FLAG`, showing me I was on the right track.
 At this point I was a bit lazy to check them all and decided I'll look at the challenge later on.
 
-One of my teammates decided to try decoding the morse by hand. He ended up seeing a possible `I WA`. Which quickly ended up as `I WANT`. Running the code on the rest of the undecoded morse gave us pretty easily the right flag: `IWANTTOFLAG`.
+One of my teammates (GG @Plifou !) decided to try decoding the morse by hand. He ended up seeing a possible `I WA`. Which quickly ended up as `I WANT`. Running the code on the rest of the undecoded morse gave us pretty easily the right flag: `IWANTTOFLAG`.
 
 
 ## Alternative (and better) method
